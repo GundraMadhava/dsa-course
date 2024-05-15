@@ -1,1 +1,46 @@
+#include <stdio.h>
+#include <string.h>
+
+// Function to sort the characters of a string
+void sortString(char *s) {
+    int i, j;
+    char temp;
+    int len = strlen(s);
+    
+    for (i = 0; i < len - 1; i++) {
+        for (j = i + 1; j < len; j++) {
+            if (s[i] > s[j]) {
+                temp = s[i];
+                s[i] = s[j];
+                s[j] = temp;
+            }
+        }
+    }
+}
+
+int main() {
+    char s[] = "tree"; 
+    int len = strlen(s);
+    int startIndex = -1;
+    
+    sortString(s);
+    for (int i = 0; i < len - 1; i++) {
+        if (s[i] == s[i + 1]) {
+            startIndex = i;
+            break;
+        }
+    }
+    
+    // Output the sorted string
+    printf("Sorted string: %s\n", s);
+    
+    // Output the starting index of the first repeated character
+    if (startIndex != -1) {
+        printf("Starting index of the first repeated character: %d\n", startIndex);
+    } else {
+        printf("No repeated characters found.\n");
+    }
+    
+    return 0;
+}
 
