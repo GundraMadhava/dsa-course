@@ -1,1 +1,28 @@
+#include <stdio.h>
+#include <string.h>
+
+int findNeedle(const char* haystack, const char* needle) {
+    int haystackLen = strlen(haystack);
+    int needleLen = strlen(needle);
+
+    for (int i = 0; i <= haystackLen - needleLen; i++) {
+        int j;
+        for (j = 0; j < needleLen; j++) {
+            if (haystack[i + j] != needle[j])
+                break;
+        }
+        if (j == needleLen)
+            return i; // Found the first occurrence
+    }
+
+    return -1; // Needle not found
+}
+
+int main() {
+    const char* haystack = "sadbutsad";
+    const char* needle = "sad";
+    int result = findNeedle(haystack, needle);
+    printf("Output: %d\n", result);
+    return 0;
+}
 
