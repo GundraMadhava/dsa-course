@@ -1,1 +1,31 @@
+#include <stdio.h>
 
+// Function to find the missing element
+int findMissingElement(int arr[], int n) {
+    // Calculate the expected sum of the first n natural numbers
+    int total = n * (n + 1) / 2;
+    
+    // Calculate the actual sum of the elements in the array
+    int sum = 0;
+    for (int i = 0; i < n - 1; i++) {
+        sum += arr[i];
+    }
+    
+    // The missing number is the difference between the expected sum and the actual sum
+    return total - sum;
+}
+
+int main() {
+    int N = 5;
+    int arr[] = {1, 2, 3, 5}; // Change this to your input array
+    int missingNumber = findMissingElement(arr, N);
+    printf("The missing element is %d\n", missingNumber);
+
+    // For another example
+    N = 10;
+    int arr2[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    missingNumber = findMissingElement(arr2, N);
+    printf("The missing element is %d\n", missingNumber);
+
+    return 0;
+}
