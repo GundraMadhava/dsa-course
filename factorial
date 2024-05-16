@@ -1,1 +1,18 @@
+#include <stdio.h>
+
+// Function to calculate factorial without recursion
+unsigned long long factorial(int N) {
+    unsigned long long result = 1;
+    for (int i = 1; i <= N; i++) {
+        result *= i;
+    }
+    return result;
+}
+
+int main() {
+    int N = 2; // Change this value as needed
+    printf("Factorial of %d: %llu\n", N, factorial(N));
+    return 0;
+}
+
 
