@@ -1,1 +1,1 @@
-c program 
+python program 
